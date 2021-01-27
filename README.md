@@ -2,6 +2,7 @@
 
 ## Overview
 ![The architecture of RAGAT.](model.png)
+
 We propose a Relation Aware Graph ATtention network (RAGAT) that constructs separate message functions for different relations. Speciﬁcally, we introduce relation speciﬁc parameters to augment the expressive capability of message functions, which enables the model to extract relational information in parameter space. To validate the effect of relation aware mechanism, RAGAT is implemented with a variety of relation aware message functions. Experiments show RAGAT outperforms state-of-the-art link prediction baselines on standard FB15k-237 and WN18RR datasets.
 
 ## Dependencies

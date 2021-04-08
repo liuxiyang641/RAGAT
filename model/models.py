@@ -29,13 +29,10 @@ class RagatBase(BaseModel):
         self.init_embed = get_param((self.p.num_ent, self.p.init_dim))
         self.device = self.edge_index.device
 
-        if self.p.num_bases > 0:
-            self.init_rel = get_param((self.p.num_bases, self.p.init_dim))
+        if self.p.score_func == 'transe':
+            self.init_rel = get_param((num_rel, self.p.init_dim))
         else:
-            if self.p.score_func == 'transe':
-                self.init_rel = get_param((num_rel, self.p.init_dim))
-            else:
-                self.init_rel = get_param((num_rel * 2, self.p.init_dim))
+            self.init_rel = get_param((num_rel * 2, self.p.init_dim))
 
         self.conv1 = RagatConv(self.edge_index, self.edge_type, self.p.init_dim, self.p.gcn_dim, num_rel,
                                act=self.act, params=self.p, head_num=self.p.head_num)

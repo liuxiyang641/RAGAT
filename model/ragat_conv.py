@@ -50,7 +50,7 @@ class RagatConv(MessagePassing):
         self.in_index, self.out_index = self.edge_index[:, :num_edges], self.edge_index[:, num_edges:]
         self.in_type, self.out_type = self.edge_type[:num_edges], self.edge_type[num_edges:]
         self.loop_index = torch.stack([torch.arange(self.p.num_ent), torch.arange(self.p.num_ent)]).to(self.device)
-        self.loop_type = torch.full((self.p.num_ent,), self.num_rels, dtype=torch.long).to(self.device)
+        self.loop_type = torch.full((self.p.num_ent,), 2 * self.num_rels, dtype=torch.long).to(self.device)
         # E * 1, norm A
         num_ent = self.p.num_ent
         self.in_norm = None if self.p.att else self.compute_norm(self.in_index, num_ent)

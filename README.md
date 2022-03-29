@@ -15,12 +15,12 @@ We propose a Relation Aware Graph ATtention network (RAGAT) that constructs sepa
 ## Training model
 ```bash
 # FB15k-237
-python run.py -epoch 1500 -name test_fb -model ragat -score_func
-interacte -opn cross -gpu 0 -data FB15k-237 -gcn_drop 0.4 -ifeat_drop 0.4 
+python run.py -epoch 1500 -name test_fb -model ragat -score_func \
+interacte -opn cross -gpu 0 -data FB15k-237 -gcn_drop 0.4 -ifeat_drop 0.4 \
 -ihid_drop 0.3 -batch 1024 -iker_sz 9 -attention True -head_num 2
 # WN18RR
-python run.py -epoch 1500 -name test_wn -model ragat -score_func
-interacte -opn cross -gpu 0 -data WN18RR -gcn_drop 0.4 -ifeat_drop 0.2 
+python run.py -epoch 1500 -name test_wn -model ragat -score_func \
+interacte -opn cross -gpu 0 -data WN18RR -gcn_drop 0.4 -ifeat_drop 0.2 \
 -ihid_drop 0.3 -batch 256 -iker_sz 11 -iperm 4 -attention True -head_num 1
 ```
 

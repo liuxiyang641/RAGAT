@@ -7,6 +7,7 @@ We propose a Relation Aware Graph ATtention network (RAGAT) that constructs sepa
 
 ## Dependencies
 - Pytorch 1.5
+- [ordered-set](https://pypi.org/project/ordered-set/)
 
 ## Datasets
 - FB15k-237
